@@ -24,6 +24,8 @@ if (!empty($_SESSION['user'])) {
     button { margin-top:16px; width:100%; padding:10px; border:none; background:#2b6cb0; color:white; border-radius:6px; cursor:pointer; font-weight:600; }
     .msg { margin-top:12px; color:#b00020; font-size:14px; }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <div class="card">
@@ -46,6 +48,7 @@ if (!empty($_SESSION['user'])) {
       (Use the admin you created earlier: <strong>admin / admin123</strong> unless you changed it.)
     </div>
   </div>
-  
+  <script src="assets/js/ui.js"></script>
+
 </body>
 </html>
