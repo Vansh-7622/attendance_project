@@ -1,0 +1,13 @@
+/* public/assets/css/style.css */
+body { font-family: Arial, sans-serif; margin:0; background:#f4f6f9; color:#222; }
+.topbar { background:#2b6cb0; color:#fff; padding:12px 18px; display:flex; justify-content:space-between; align-items:center; }
+.brand { font-weight:700; }
+.container { padding:18px; display:flex; justify-content:center; }
+.card { width:100%; max-width:980px; background:#fff; padding:18px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+.controls { display:flex; gap:12px; align-items:end; flex-wrap:wrap; }
+.controls label { display:flex; flex-direction:column; font-size:13px; }
+select, input[type="date"] { padding:8px 10px; border:1px solid #ddd; border-radius:6px; }
+.btn { background:#2b6cb0; color:#fff; padding:8px 12px; border-radius:6px; border:none; cursor:pointer; text-decoration:none; display:inline-block; }
+.table { width:100%; border-collapse:collapse; margin-top:10px; }
+.table th, .table td { padding:8px 10px; border:1px solid #eee; text-align:left; }
+.status-select { padding:6px 8px; border-radius:6px; }
