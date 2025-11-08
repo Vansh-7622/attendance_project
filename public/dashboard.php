@@ -20,6 +20,8 @@ $user = $_SESSION['user'] ?? null;
     .class-row { display:flex; justify-content:space-between; padding:8px 6px; border-bottom:1px solid #f3f3f3; }
     .muted { color:#666; font-size:13px; }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <script src="assets/js/attendance.js"></script>
 
@@ -86,6 +88,7 @@ $user = $_SESSION['user'] ?? null;
   </main>
 
   <script src="assets/js/dashboard.js"></script>
-  
+  <script src="assets/js/ui.js"></script>
+
 </body>
 </html>
