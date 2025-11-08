@@ -15,6 +15,8 @@ require_login();
     .small { font-size:13px; color:#555; }
     .csv-btn { background:#2d3748; color:#fff; padding:8px 10px; border-radius:6px; border:none; cursor:pointer; }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <header class="topbar">
@@ -127,6 +129,7 @@ require_login();
       document.getElementById('csvBtn').addEventListener('click', exportCSV);
     });
   </script>
-  
+  <script src="assets/js/ui.js"></script>
+
 </body>
 </html>
