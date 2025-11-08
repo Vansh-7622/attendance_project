@@ -1,29 +1,43 @@
-// public/assets/js/ui.js
-// small UI helper: toast notifications and status pill helper
+/* ui.js — lightweight UI helpers: toast messages & colored status selects */
 
-function showToast(message, type = 'default', timeout = 3500) {
-  let wrap = document.querySelector('.toast-wrap');
-  if (!wrap) {
-    wrap = document.createElement('div');
-    wrap.className = 'toast-wrap';
-    document.body.appendChild(wrap);
-  }
-  const t = document.createElement('div');
-  t.className = 'toast ' + (type === 'success' ? 'success' : (type === 'error' ? 'error' : ''));
-  t.textContent = message;
-  wrap.appendChild(t);
-  // animate-in
-  requestAnimationFrame(() => t.classList.add('show'));
+/* ---- Toast notifications ---- */
+function showToast(msg, type = 'success') {
+  const container = document.querySelector('.toast-wrap') || createToastContainer();
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.textContent = msg;
+  container.appendChild(toast);
+
+  // Animate in
+  setTimeout(() => toast.classList.add('show'), 100);
+  // Auto-hide after 3 s
   setTimeout(() => {
-    t.classList.remove('show');
-    setTimeout(()=> t.remove(), 250);
-  }, timeout);
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 250);
+  }, 3000);
 }
 
-// convert status string to a pill element
-function makeStatusPill(status) {
-  const span = document.createElement('span');
-  span.className = 'pill ' + status;
-  span.textContent = status.charAt(0).toUpperCase() + status.slice(1);
-  return span;
+function createToastContainer() {
+  const wrap = document.createElement('div');
+  wrap.className = 'toast-wrap';
+  document.body.appendChild(wrap);
+  return wrap;
 }
+
+/* ---- Decorate status selects ---- */
+function decorStatusSelects() {
+  document.querySelectorAll('select.status-select').forEach(sel => {
+    sel.addEventListener('change', e => {
+      const val = e.target.value.toLowerCase();
+      e.target.style.background = {
+        present: 'rgba(16,185,129,0.12)',
+        absent: 'rgba(239,68,68,0.08)',
+        late:   'rgba(245,158,11,0.08)'
+      }[val] || '#fff';
+    });
+  });
+}
+
+/* ---- Tiny helper to show success/error easily ---- */
+window.showSuccess = msg => showToast(msg, 'success');
+window.showError   = msg => showToast(msg, 'error');
