@@ -19,6 +19,8 @@ require_login(); // allow admin/teacher
     .muted { color:#666; font-size:13px; }
     .small { font-size:13px; color:#555; }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <header class="topbar">
@@ -76,6 +78,7 @@ require_login(); // allow admin/teacher
 
   <!-- ✅ Correct relative path -->
   <script src="../public/assets/js/manage.js"></script>
-  
+  <script src="assets/js/ui.js"></script>
+
 </body>
 </html>
